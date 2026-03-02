@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GORJAZZ18 | מסע מוזיקלי רומנטי בין ניו יורק לתל אביב</title>
-    <meta name="description" content="GORJAZZ18 - הרכב בלוז וג'אז ישראלי המשלב אווירה אינטימית, יין משובח וצלילים מגשרים בין ניו יורק לניו אורלינס ועד תל אביב.">
+    <title>GORJAZZ | מסע מוזיקלי רומנטי בין ניו יורק לתל אביב</title>
+    <meta name="description" content="GORJAZZ - הרכב בלוז וג'אז ישראלי המשלב אווירה אינטימית, גרוב וצלילים מגשרים בין ניו יורק לניו אורלינס ועד תל אביב.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -45,11 +45,24 @@
 
         .hero-title { font-size: 4rem; margin-bottom: 10px; color: var(--accent); text-transform: uppercase; }
         .hero-subtitle { font-size: 1.5rem; max-width: 700px; font-weight: 300; }
-        .nav-links { margin-top: 30px; display: flex; gap: 20px; }
+        
+        .events-banner {
+            background: var(--accent);
+            color: #000;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links { margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
         .nav-links a { color: var(--text-primary); text-decoration: none; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; border-bottom: 1px solid transparent; transition: border 0.3s ease; }
         .nav-links a:hover { border-bottom: 1px solid var(--accent); }
 
-        section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
+        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
         .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 50px; position: relative; padding-bottom: 15px; }
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background-color: var(--accent); }
 
@@ -64,76 +77,111 @@
         .service-item:hover { transform: translateY(-5px); border-color: var(--accent); }
         .service-item h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.5rem; }
 
-        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
-        .gallery img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(40%); transition: filter 0.5s ease; }
-        .gallery img:hover { filter: grayscale(0%); }
+        .faq { background-color: var(--bg-color); }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        .faq-question { font-size: 1.3rem; color: var(--accent); margin-bottom: 10px; font-weight: 700; }
+        .faq-answer { font-size: 1.1rem; color: var(--text-secondary); }
+
+        .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 40px; }
+        .social-links a { color: var(--accent); text-decoration: none; font-weight: bold; border: 1px solid var(--accent); padding: 10px 20px; transition: 0.3s; }
+        .social-links a:hover { background: var(--accent); color: #000; }
 
         .contact-box { background-color: var(--dark-accent); padding: 60px; text-align: center; }
-        .cta-button { display: inline-block; padding: 15px 40px; background-color: var(--accent); color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; margin-top: 20px; transition: opacity 0.3s; }
-        .cta-button:hover { opacity: 0.8; }
+        .cta-button { display: inline-block; padding: 15px 40px; background-color: var(--accent); color: #000; text-decoration: none; font-weight: bold; letter-spacing: 1px; transition: all 0.3s ease; border: none; cursor: pointer; }
+        .cta-button:hover { background-color: #fff; transform: scale(1.05); }
 
-        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: var(--text-secondary); border-top: 1px solid #222; }
-        .social-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
-        .social-links a { color: var(--text-primary); text-decoration: none; }
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #666; border-top: 1px solid #222; }
 
-        @media (max-width: 768px) { .hero-title { font-size: 2.5rem; } .about-grid { grid-template-columns: 1fr; } .section-title { font-size: 2rem; } }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
+    <div class="events-banner">
+        הופעה קרובה: סטודיו אנט (ת"א) | יום ראשון הבא | אל תחמיצו!
+    </div>
+
     <header id="home">
-        <h1 class="hero-title">GORJAZZ18</h1>
-        <p class="hero-subtitle">מסע מוזיקלי רומנטי מגשר בין ניו יורק לניו אורלינס ועד תל אביב</p>
+        <h1 class="hero-title">GORJAZZ</h1>
+        <p class="hero-subtitle">ההרכב שמביא את הגרוב של ניו יורק וניו אורלינס אל תוך הלב של תל אביב. בלוז, ג'אז ומה שביניהם.</p>
         <nav class="nav-links">
             <a href="#about">הסיפור שלנו</a>
-            <a href="#services">הופעות ואירועים</a>
-            <a href="#gallery">גלריה</a>
+            <a href="#shows">הופעות</a>
+            <a href="#faq">שאלות ותשובות</a>
             <a href="#contact">יצירת קשר</a>
         </nav>
     </header>
+
     <section id="about">
         <h2 class="section-title">הסיפור שלנו</h2>
         <div class="about-grid">
             <div class="about-text">
-                <p>GORJAZZ18 מביאים את הוויב הניו יורקי ללב תל אביב. ההרכב מציע חוויה תרבותית סוחפת המשלבת ג'אז ובלוז באווירה אינטימית, בליווי יין משובח וצלילים שחודרים לנשמה.</p>
-                <p>אנחנו מאמינים שמוזיקה היא גשר – בין יבשות, בין תקופות ובין אנשים. מהסמטאות של ניו אורלינס ועד המועדונים התוססים של ניו יורק, אנחנו מביאים את הרוח הזו לקהל הישראלי בדיוק מוזיקלי ובאלגנטיות ללא פשרות.</p>
+                <p>GORJAZZ הוא מפגש פסגה בין תרבויות וצלילים. אנחנו יוצרים חוויה שמתחילה בסמטאות של ניו אורלינס, עוברת דרך המועדונים החשוכים של ניו יורק ונוחתת ברחובות השוקקים של תל אביב.</p>
+                <p>המוזיקה שלנו היא שילוב של בלוז שורשי, ג'אז מתוחכם ואנרגיה ישראלית חמה. אחרי הופעות מוצלחות במקומות כמו "הפעמון" ומועדוני ג'אז מובילים, אנחנו ממשיכים להפיץ את הצליל הייחודי שלנו.</p>
             </div>
             <div class="about-image">
-                <img src="images/photo_MAAnsoaxtlxTFR_aIy_YpsNacBAAMCAAN3AAM6BA.jpg" alt="GORJAZZ18 Live Performance">
+                <img src="images/photo_MAAnsoaxtlxTFR_aIy_YpsNacBAAMCAAN3AAM6BA.jpg" alt="GORJAZZ Performance">
             </div>
         </div>
     </section>
-    <section id="services" class="services">
-        <h2 class="section-title">הופעות ואירועים</h2>
+
+    <section id="shows" class="services">
+        <h2 class="section-title">לוח הופעות</h2>
         <div class="service-list">
             <div class="service-item">
-                <h3>הופעות חיות</h3>
-                <p>ערבי ג'אז ובלוז במועדונים נבחרים ובחללים אינטימיים בתל אביב והסביבה.</p>
+                <h3>סטודיו אנט, תל אביב</h3>
+                <p>יום ראשון הקרוב | פתיחת דלתות: 20:00</p>
+                <p>ערב אינטימי של ג'אז ובלוז בחלל הכי מיוחד בעיר.</p>
             </div>
             <div class="service-item">
-                <h3>קבלות פנים לחתונות</h3>
-                <p>מוזיקה אלגנטית ומתוחכמת שיוצרת אווירה יוקרתית ומרגשת ברגעים החשובים שלכם.</p>
-            </div>
-            <div class="service-item">
-                <h3>אירועים פרטיים ועסקיים</h3>
-                <p>התאמה אישית של הליינאפ המוזיקלי לאירועי בוטיק, השקות וערבי חברה.</p>
+                <h3>הפעמון (הופעה קודמת)</h3>
+                <p>תודה לכל מי שהגיע לערב הבלוז המחשמל בשבוע שעבר!</p>
             </div>
         </div>
     </section>
-    <section id="gallery">
-        <h2 class="section-title">גלריה</h2>
-        <div class="gallery">
-            <img src="images/photo_AAAnwoaxtlxTFR9fgkH33fxdsBAAMCAAN3AAM6BA.jpg" alt="GORJAZZ18 Moment 1">
-            <img src="images/photo_sAAn0oaxtlxTFR03NZmpkThqABAAMCAAN3AAM6BA.jpg" alt="GORJAZZ18 Moment 2">
-            <img src="images/photo_MAAnsoaxtlxTFR_aIy_YpsNacBAAMCAAN3AAM6BA.jpg" alt="GORJAZZ18 Moment 3">
+
+    <section id="faq">
+        <h2 class="section-title">שאלות ותשובות</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <p class="faq-question">איזה סוג מוזיקה אתם מנגנים?</p>
+                <p class="faq-answer">אנחנו מתמקדים בשילוב של בלוז קלאסי, ג'אז מודרני ועיבודים מקוריים לקטעים מוכרים. האווירה נעה בין אינטימיות רומנטית לגרוב מקפיץ.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">האם ניתן להזמין את ההרכב לאירועים פרטיים?</p>
+                <p class="faq-answer">בהחלט. אנחנו מתאימים את ההרכב ואת הרפרטואר לפי אופי האירוע – החל מקבלות פנים יוקרתיות ועד הופעות מלאות וסוחפות.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">איפה אפשר לשמוע חומרים שלכם?</p>
+                <p class="faq-answer">ניתן למצוא לינקים לקטעים נבחרים ברשתות החברתיות שלנו (פייסבוק ואינסטגרם) וכמובן להגיע להופעות החיות.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">האם יש לכם שיתופי פעולה עם אמנים נוספים?</p>
+                <p class="faq-answer">כן, אנחנו מארחים לעיתים קרובות סולנים ונגנים אורחים מסצנת הג'אז הישראלית והבינלאומית.</p>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/search/top?q=gorjazz" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/" target="_blank">YouTube</a>
         </div>
     </section>
+
     <section id="contact" class="contact-box">
         <h2 class="section-title">בואו נדבר</h2>
-        <p>מעוניינים להזמין הופעה או לשאול על אירוע קרוב?</p>
-        <a href="https://www.instagram.com/gorjazz_duo/" class="cta-button" target="_blank">עקבו אחרינו באינסטגרם</a>
+        <p style="margin-bottom: 30px;">מעוניינים במידע נוסף, הזמנת כרטיסים או הצעת מחיר לאירוע?</p>
+        <a href="https://wa.me/972500000000" class="cta-button">צרו קשר ב-WhatsApp</a>
     </section>
+
     <footer>
-        <p>&copy; 2026 GORJAZZ18. כל הזכויות שמורות.</p>
+        <p>&copy; 2026 GORJAZZ - Israeli Jazz & Blues Duo. כל הזכויות שמורות.</p>
     </footer>
+
 </body>
 </html>
